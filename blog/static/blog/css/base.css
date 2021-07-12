@@ -1,0 +1,110 @@
+.navbar {
+    background: lightblue;
+    color: black;
+}
+
+.leftItems {
+    margin-left: auto;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: black;
+    font-size: 19px;
+    font-family: sans-serif;
+}
+
+.navbar .navbar-brand {
+    color: black;
+    font-weight: bold;
+}
+
+.content-start {
+    margin-top: 20px;
+}
+
+.content-section {
+    /*background: #ffffff;*/
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /*background: indigo;*/
+}
+
+#heading-nav {
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.list-group .list-group-item {
+    color: blueviolet;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+.card .card-header .author-name {
+    text-decoration: none;
+    margin-right: 10px;
+    color: darkcyan;
+    /*font-weight: bolder;*/
+    font-size: 20px;
+    font-style: italic;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    /*border-radius: 50%;*/
+}
+
+.account-heading {
+    font-size: 2.5rem;
+    /*color: red;*/
+}
+
+
+/*Profile data next to profile pic*/
+
+.pages {
+    text-align: right;
+}

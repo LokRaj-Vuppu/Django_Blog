@@ -1,0 +1,77 @@
+{% extends "blog/base.html" %} {% block content %} {% for post in posts %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <img class="rounded-circle article-img" src="{{post.author.profile.image.url}}">
+        <a class="author-name" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{% url 'post-detail' post.id %}">{{ post.title}}</a></h5>
+        <p class="card-text">{{ post.content }}</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+    <div class="card-footer">
+        <!-- {{post.hashtags}} -->
+        <p>hastags</p>
+    </div>
+</div>
+
+{% endfor %} 
+
+    <div class="pages">
+
+        {% if is_paginated %}
+
+            {% comment %} For previous pages {% endcomment %}
+            {% if page_obj.has_previous %}
+                {% comment %} <a class="btn btn-outline-primary mb-4" href="?page=1">First</a> {% endcomment %}
+                <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% comment %} Page Number {% endcomment %}
+
+            {% for num in page_obj.paginator.page_range %}
+
+                {% if page_obj.number == num %}
+                    <a class="btn btn-primary mb-4" href="?page={{num}}">{{num}}</a>
+                {% else %}
+                    <a class="btn btn-outline-primary mb-4" href="?page={{num}}">{{num}}</a>
+                {% endif %}
+
+            {% endfor %}
+
+            {% comment %} For Next pages {% endcomment %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% comment %} <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a> {% endcomment %}
+            {% endif %}
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+
+{% comment %} Logic for Showing only the 3 pages to left and right {% endcomment %}
+
+{% comment %} {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %} {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
