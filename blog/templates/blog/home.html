@@ -7,8 +7,8 @@
         <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
     </div>
     <div class="card-body">
-        <h5 class="card-title">
-            <a class="post_name" href="{% url 'post-detail' post.id %}">{{ post.title}}</a></h5>
+        <h3 class="card-title">
+            <a class="post_name" href="{% url 'post-detail' post.id %}">{{ post.title}}</a></h3>
         <p class="card-text">{{ post.content }}</p>
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
