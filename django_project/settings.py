@@ -23,12 +23,13 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l@=3wcg!wuwb6-c+l_k_n-(o5aaptt1mkaiyk4)u=%)!i41@p+'
+# SECRET_KEY = 'django-insecure-l@=3wcg!wuwb6-c+l_k_n-(o5aaptt1mkaiyk4)u=%)!i41@p+'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pythonblogwebapp.herokuapp.com']
 
 
 # Application definition
