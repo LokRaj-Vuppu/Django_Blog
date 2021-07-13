@@ -86,14 +86,19 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# 'ENGINE'   : 'django.db.backends.postgresql_psycopg2',
+#         'NAME'     : 'Django_Blog',
+#         'USER'     : 'postgres',
+#         'PASSWORD' : 'user',
+#         'HOST'     : 'localhost',
+#         'PORT'     : '5432',
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE'   : 'django.db.backends.postgresql_psycopg2',
-        'NAME'     : 'Django_Blog',
-        'USER'     : 'postgres',
-        'PASSWORD' : 'user',
-        'HOST'     : 'localhost',
-        'PORT'     : '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -174,4 +179,4 @@ AWS_DEFAULT_ACL = None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-django_heroku = settings(locals())
+django_heroku.settings(locals())
